@@ -102,6 +102,6 @@ do
         route=$(cf curl /v2/apps/$(cf app ${D} --guid)/routes | jq -r '.resources[0].entity.host')
         echo "Found route '${route}'\n"
         echo "Pushing ${D}..."
-        cf push -b https://github.com/cloudfoundry/java-buildpack.git -n $route
+        cf push -b https://github.com/cloudfoundry/java-buildpack.git
     fi
 done

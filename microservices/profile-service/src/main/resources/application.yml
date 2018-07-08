@@ -100,6 +100,9 @@ security:
     client:
       client-id: acme
       access-token-uri: http://localhost:8787
+---
+spring:
+  profiles: cloud
 services:
-  profile:
-    uri: http://localhost:6789
+  customer:
+    uri: ${vcap.services.customer-service.uri}
